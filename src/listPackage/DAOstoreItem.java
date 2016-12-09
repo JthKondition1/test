@@ -80,13 +80,22 @@ public class DAOstoreItem {
         return smallest;
     }
 
-        public double avg(int[] x) { 
+    public double avg(int[] x) {
         if (listLength > 0) {
             return (double) n / listLength;
         }
         return 0;
     }
-    
+
+    public double standardDeviationQ(int[] x) {
+        double mean = avg(x);
+        double total = 0;
+        for (int i = 0; i < listLength; i++) {
+            total += Math.pow(x[i] - mean, 2);
+        }
+        return Math.sqrt(total / (listLength - 1));
+    }
+
     public void create(StoreItem storeItem) {
         itemList.add(storeItem);
         writeList();

@@ -80,15 +80,16 @@ public class StoreItemAppMenu {
                 System.out.println(data.orderByWeight());
             } else if (choice == 14) { 
                 this.x = data.quantityArray(x);
+                System.out.println("\n");
                 System.out.println("Statistics for Quantity:");
                 //System.out.println(Arrays.toString(data.quantityStats(qArray)));
                 System.out.println("Total items: " + data.sumQ());
                 System.out.println("Highest value: " + data.maxQ(x));
                 System.out.println("Lowest value (Excluding 0): " + data.minQ(x));
                 System.out.println("Average: " + data.avg(x));
-                System.out.println("Standard deviation: ");
+                System.out.format("Standard deviation: %.5f\n" , data.standardDeviationQ(x));
             } else if (choice == 0) {
-                ;
+                System.out.println("Goodbye!");
             }
 
         }
