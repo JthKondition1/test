@@ -1,3 +1,7 @@
+/**
+ * Data Access Object for StoreItem class. 
+ * @author Jason Heyer
+ */
 package listPackage;
  
 import java.io.BufferedReader;
