@@ -11,7 +11,7 @@ public class StoreItemAppMenu {
 
     Scanner sc = new Scanner(System.in);
     DAOstoreItem data = new DAOstoreItem();
-
+    int[] x = new int [2000];
     public StoreItemAppMenu() {
         menuLoop();
     }
@@ -78,11 +78,12 @@ public class StoreItemAppMenu {
                 System.out.println(data.orderByQuantityPriceRev());
             } else if (choice == 13) {
                 System.out.println(data.orderByWeight());
-            } else if (choice == 14) {
+            } else if (choice == 14) { 
+                this.x = data.quantityArray(x);
                 System.out.println("Statistics for Quantity:");
                 //System.out.println(Arrays.toString(data.quantityStats(qArray)));
                 System.out.println("Total items: " + data.sumQ());
-                System.out.println("Highest value: ");
+                System.out.println("Highest value: " + data.maxQ(x));
                 System.out.println("Lowest value: ");
                 System.out.println("Average: ");
                 System.out.println("Standard deviation: "); 

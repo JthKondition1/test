@@ -39,14 +39,14 @@ public class DAOstoreItem {
         readList();
     }
 
-    public int[] quantityStats(int[] qArray) {
-             qArray = new int[2000];
+    public int[] quantityArray(int[] x) {
+           //  qArray = new int[2000];
         int count = 0;
         for (StoreItem storeItem : itemList) {
-            qArray[count] = storeItem.getQuantity();
+            this.x[count] = storeItem.getQuantity();
             count++;
         }
-        return qArray;
+        return this.x;
     }
 
     public int sumQ() {
@@ -56,6 +56,18 @@ public class DAOstoreItem {
         return this.n;
     }
 
+        public int maxQ(int[] x) {
+        int biggest = Integer.MIN_VALUE; //starts at smallest value
+        // System.out.println("The biggest int is " + biggest);
+        for (int i = 0; i < x.length; i++) {
+            if (x[i] > biggest) {
+                biggest = x[i];
+            }
+        }
+        return biggest;
+
+    }
+    
     public void create(StoreItem storeItem) {
         itemList.add(storeItem);
         writeList();
