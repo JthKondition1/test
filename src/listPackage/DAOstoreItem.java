@@ -1,9 +1,10 @@
 /**
- * Data Access Object for StoreItem class. 
+ * Data Access Object for StoreItem class.
+ *
  * @author Jason Heyer
  */
 package listPackage;
- 
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -22,7 +23,7 @@ public class DAOstoreItem {
 
     private final String fileName = "itemdata.txt";
     private List<StoreItem> itemList;
-    private int[] x = new int[2000];    
+    private int[] x = new int[2000];
     private int n;
 
     public DAOstoreItem() {
@@ -40,7 +41,7 @@ public class DAOstoreItem {
     }
 
     public int[] quantityArray(int[] x) {
-           //  qArray = new int[2000];
+        //  qArray = new int[2000];
         int count = 0;
         for (StoreItem storeItem : itemList) {
             this.x[count] = storeItem.getQuantity();
@@ -50,15 +51,14 @@ public class DAOstoreItem {
     }
 
     public int sumQ() {
-        for (StoreItem qu: itemList) { 
-            n+=qu.getQuantity(); 
+        for (StoreItem qu : itemList) {
+            n += qu.getQuantity();
         }
         return this.n;
     }
 
-        public int maxQ(int[] x) {
+    public int maxQ(int[] x) {
         int biggest = Integer.MIN_VALUE; //starts at smallest value
-        // System.out.println("The biggest int is " + biggest);
         for (int i = 0; i < x.length; i++) {
             if (x[i] > biggest) {
                 biggest = x[i];
@@ -67,7 +67,17 @@ public class DAOstoreItem {
         return biggest;
 
     }
-    
+
+    public int minQ(int[] x) {
+        int smallest = Integer.MAX_VALUE; // Starts at biggest value
+        for (int i = 0; i < x.length; i++) {
+            if (x[i] < smallest && x[i] > 0) {
+                smallest = x[i];
+            }
+        }
+        return smallest;
+    }
+
     public void create(StoreItem storeItem) {
         itemList.add(storeItem);
         writeList();

@@ -84,9 +84,9 @@ public class StoreItemAppMenu {
                 //System.out.println(Arrays.toString(data.quantityStats(qArray)));
                 System.out.println("Total items: " + data.sumQ());
                 System.out.println("Highest value: " + data.maxQ(x));
-                System.out.println("Lowest value: ");
+                System.out.println("Lowest value (Excluding 0): " + data.minQ(x));
                 System.out.println("Average: ");
-                System.out.println("Standard deviation: "); 
+                System.out.println("Standard deviation: ");
             } else if (choice == 0) {
                 ;
             }
