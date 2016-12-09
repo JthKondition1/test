@@ -1,0 +1,5 @@
+1,Milk,Dairy,5.50,1,24.000
+2,Bean Sprouts,Produce,3.50,1,7.500
+3,Kiwi,Produce,1.99,1,16.000
+4,Sardines,Canned Meat,3.00,30,4.375
+5,Chips,Snack,4.29,2,24.000
