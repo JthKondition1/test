@@ -22,9 +22,10 @@ import java.util.logging.Logger;
 public class DAOstoreItem {
 
     private final String fileName = "itemdata.txt";
-    private List<StoreItem> itemList;
+    private static List<StoreItem> itemList;
     private int[] x = new int[2000];
     private int n;
+    private int listLength;
 
     public DAOstoreItem() {
 
@@ -47,6 +48,7 @@ public class DAOstoreItem {
             this.x[count] = storeItem.getQuantity();
             count++;
         }
+        this.listLength = count;
         return this.x;
     }
 
@@ -78,6 +80,13 @@ public class DAOstoreItem {
         return smallest;
     }
 
+        public double avg(int[] x) { 
+        if (listLength > 0) {
+            return (double) n / listLength;
+        }
+        return 0;
+    }
+    
     public void create(StoreItem storeItem) {
         itemList.add(storeItem);
         writeList();
